@@ -1,162 +1,133 @@
-/* =============================================
-   SellerBeacon — script.js
-   ============================================= */
+/* SellerBeacon — script.js */
 
-gsap.registerPlugin(ScrollTrigger);
-
-/* ---- Navbar scroll effect ---- */
+/* ---- Navbar scroll shadow ---- */
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 40);
+  navbar.classList.toggle('scrolled', window.scrollY > 30);
 }, { passive: true });
 
 /* ---- Mobile menu ---- */
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobile-menu');
-
 hamburger.addEventListener('click', () => {
   const open = hamburger.classList.toggle('open');
   mobileMenu.classList.toggle('open', open);
   hamburger.setAttribute('aria-expanded', open);
 });
-
-window.closeMobileMenu = function () {
+window.closeMob = () => {
   hamburger.classList.remove('open');
   mobileMenu.classList.remove('open');
-  hamburger.setAttribute('aria-expanded', 'false');
 };
 
-/* ---- Signature animation: rising chart bars ---- */
-(function buildChartBars() {
-  const canvas = document.getElementById('chart-canvas');
-  if (!canvas) return;
+/* ---- Scroll reveal ---- */
+const revealEls = document.querySelectorAll('.reveal');
+const revealObs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); } });
+}, { threshold: 0.12 });
+revealEls.forEach(el => revealObs.observe(el));
 
-  const heights = [22, 38, 55, 44, 68, 52, 80, 63, 88, 74, 95, 82, 72, 90];
-  const maxH = 380; // px
-
-  heights.forEach((pct, i) => {
-    const bar = document.createElement('div');
-    bar.className = 'chart-bar';
-    bar.style.height = Math.round((pct / 100) * maxH) + 'px';
-    bar.style.animation = `bar-grow 1.2s ease-out ${i * 0.07}s both, bar-pulse ${2 + (i % 3) * 0.4}s ease-in-out ${1.5 + i * 0.07}s infinite`;
-    canvas.appendChild(bar);
-  });
-
-  /* floating data-point dots */
-  for (let i = 0; i < 6; i++) {
-    const dot = document.createElement('div');
-    dot.style.cssText = `
-      position:absolute;
-      width:${5 + Math.random() * 5}px;
-      height:${5 + Math.random() * 5}px;
-      border-radius:50%;
-      background:var(--teal);
-      top:${10 + Math.random() * 60}%;
-      left:${5 + Math.random() * 90}%;
-      animation: float-dot ${2.5 + Math.random() * 2}s ease-in-out ${Math.random() * 2}s infinite;
-      opacity:0.5;
-    `;
-    canvas.appendChild(dot);
-  }
-})();
-
-/* ---- Hero GSAP stagger entrance ---- */
-gsap.from('.hero-content .gsap-fade-up', {
-  y: 36, opacity: 0, duration: 0.8, stagger: 0.15, ease: 'power3.out', delay: 0.2
-});
-
-/* ---- Section fade-up on scroll ---- */
-gsap.utils.toArray('.gsap-fade-up').forEach(el => {
-  /* skip elements already animated by the hero entrance */
-  if (el.closest('#hero')) return;
-  gsap.from(el, {
-    scrollTrigger: { trigger: el, start: 'top 88%', once: true },
-    y: 30, opacity: 0, duration: 0.7, ease: 'power2.out'
-  });
-});
-
-/* ---- CountUp pillars ---- */
-function countUp(el) {
-  const target = parseInt(el.dataset.target, 10);
+/* ---- CountUp ---- */
+function runCount(el) {
+  const target = +el.dataset.target;
   const suffix = el.dataset.suffix || '';
-  const duration = 1800;
-  const start = performance.now();
-
-  function tick(now) {
-    const elapsed = Math.min(now - start, duration);
-    const progress = elapsed / duration;
-    const eased = 1 - Math.pow(1 - progress, 3);
-    el.textContent = Math.round(eased * target) + suffix;
-    if (elapsed < duration) requestAnimationFrame(tick);
-    else el.textContent = target + suffix;
-  }
+  const dur = 1800;
+  const t0 = performance.now();
+  const tick = now => {
+    const p = Math.min((now - t0) / dur, 1);
+    const ease = 1 - Math.pow(1 - p, 3);
+    el.textContent = Math.round(ease * target) + suffix;
+    if (p < 1) requestAnimationFrame(tick);
+  };
   requestAnimationFrame(tick);
 }
-
-const pillarsObserver = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      document.querySelectorAll('.pillar-number').forEach(countUp);
-      pillarsObserver.disconnect();
+const countObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.querySelectorAll('[data-target]').forEach(runCount);
+      countObs.unobserve(e.target);
     }
   });
 }, { threshold: 0.4 });
+const aboutVisual = document.querySelector('.about-visual');
+if (aboutVisual) countObs.observe(aboutVisual);
 
-const pillarsSection = document.getElementById('pillars');
-if (pillarsSection) pillarsObserver.observe(pillarsSection);
+/* ---- FAQ accordion ---- */
+document.querySelectorAll('.faq-q').forEach(q => {
+  q.addEventListener('click', () => {
+    const item = q.closest('.faq-item');
+    const ans  = item.querySelector('.faq-a');
+    const isOpen = item.classList.contains('open');
 
-/* ---- Contact form (idle → sending → sent) ---- */
-const form = document.getElementById('contact-form');
-const formBtn = document.getElementById('form-btn');
-const formBtnText = document.getElementById('form-btn-text');
-const formStatus = document.getElementById('form-status');
+    // close all
+    document.querySelectorAll('.faq-item.open').forEach(o => {
+      o.classList.remove('open');
+      o.querySelector('.faq-a').style.maxHeight = null;
+    });
+
+    if (!isOpen) {
+      item.classList.add('open');
+      ans.style.maxHeight = ans.scrollHeight + 'px';
+    }
+  });
+});
+
+/* ---- Hero GSAP entrance ---- */
+if (typeof gsap !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.from('.hero-urgency', { y: 20, opacity: 0, duration: .6, ease: 'power2.out', delay: .1 });
+  gsap.from('.hero-text h1',  { y: 28, opacity: 0, duration: .7, ease: 'power3.out', delay: .25 });
+  gsap.from('.hero-text .lead', { y: 22, opacity: 0, duration: .7, ease: 'power2.out', delay: .4 });
+  gsap.from('.hero-ctas',     { y: 18, opacity: 0, duration: .6, ease: 'power2.out', delay: .55 });
+  gsap.from('.hero-trust',    { y: 14, opacity: 0, duration: .6, ease: 'power2.out', delay: .65 });
+  gsap.from('.hero-card',     { y: 32, opacity: 0, duration: .8, ease: 'power3.out', delay: .4 });
+}
+
+/* ---- Smooth anchor scroll ---- */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const tgt = document.querySelector(a.getAttribute('href'));
+    if (!tgt) return;
+    e.preventDefault();
+    window.scrollTo({ top: tgt.getBoundingClientRect().top + scrollY - 80, behavior: 'smooth' });
+  });
+});
+
+/* ---- Contact form ---- */
+const form    = document.getElementById('contact-form');
+const fBtn    = document.getElementById('f-btn');
+const fBtnTxt = document.getElementById('f-btn-text');
+const fStatus = document.getElementById('form-status');
 
 if (form) {
-  form.addEventListener('submit', function (e) {
+  form.addEventListener('submit', e => {
     e.preventDefault();
+    const name  = document.getElementById('f-name').value.trim();
+    const email = document.getElementById('f-email').value.trim();
+    const msg   = document.getElementById('f-msg').value.trim();
 
-    /* basic validation */
-    const name = document.getElementById('cf-name').value.trim();
-    const email = document.getElementById('cf-email').value.trim();
-    const message = document.getElementById('cf-message').value.trim();
+    fStatus.className = 'form-status';
 
-    if (!name || !email || !message) {
-      formStatus.className = 'form-status error';
-      formStatus.textContent = 'Please fill in your name, email and message before sending.';
+    if (!name || !email || !msg) {
+      fStatus.className = 'form-status error';
+      fStatus.textContent = 'Please fill in your name, email and message.';
+      return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      fStatus.className = 'form-status error';
+      fStatus.textContent = 'Please enter a valid email address.';
       return;
     }
 
-    const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRe.test(email)) {
-      formStatus.className = 'form-status error';
-      formStatus.textContent = 'Please enter a valid email address.';
-      return;
-    }
+    fBtn.disabled = true;
+    fBtnTxt.textContent = 'Sending…';
 
-    /* sending state */
-    formStatus.className = 'form-status';
-    formBtn.disabled = true;
-    formBtnText.textContent = 'Sending…';
-
-    /* simulate async send — replace with real fetch/mailto if needed */
     setTimeout(() => {
-      formBtn.disabled = false;
-      formBtnText.textContent = 'Send Message';
-      formStatus.className = 'form-status success';
-      formStatus.textContent = '✓ Message sent — I\'ll be in touch soon. You can also reach me directly on WhatsApp.';
+      fBtn.disabled = false;
+      fBtnTxt.textContent = 'Send Message';
+      fStatus.className = 'form-status success';
+      fStatus.textContent = '✓ Message sent! I\'ll be in touch within 24 hours. You can also reach me on WhatsApp for a faster response.';
       form.reset();
     }, 1400);
   });
 }
-
-/* ---- Smooth anchor scroll (offset for fixed nav) ---- */
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    const target = document.querySelector(this.getAttribute('href'));
-    if (!target) return;
-    e.preventDefault();
-    const offset = 80;
-    const top = target.getBoundingClientRect().top + window.scrollY - offset;
-    window.scrollTo({ top, behavior: 'smooth' });
-  });
-});

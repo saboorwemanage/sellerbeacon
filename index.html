@@ -4,425 +4,582 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SellerBeacon — Marketplace Growth for Ambitious Brands</title>
-  <meta name="description" content="Expert Amazon marketplace management — PPC campaigns, listing optimization, keyword research and full account management for international sellers.">
-  <meta name="theme-color" content="#0F172A">
+  <meta name="description" content="Expert Amazon marketplace management for international sellers. PPC, listings, account management, keyword research and more across USA, UK, EU, CA and JP.">
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;1,300;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-  <!-- GSAP -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- ============================================================
-     NAVBAR
-     ============================================================ -->
+<!-- ================================================
+  NAVBAR
+================================================ -->
 <nav id="navbar">
   <div class="container">
     <div class="nav-inner">
-      <a href="#" class="nav-logo" aria-label="SellerBeacon home">
-        <div class="nav-logo-icon">
-          <!-- Beacon / signal icon -->
+      <a href="#" class="nav-logo">
+        <div class="nav-logo-mark">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M5.636 5.636a9 9 0 1 0 12.728 0"/>
             <path d="M8.464 8.464a5 5 0 1 0 7.072 0"/>
             <circle cx="12" cy="12" r="1" fill="currentColor"/>
           </svg>
         </div>
-        <span class="nav-logo-text">SellerBeacon</span>
+        <span class="nav-logo-name">SellerBeacon</span>
       </a>
 
       <div class="nav-links">
-        <a href="#features">Approach</a>
         <a href="#services">Services</a>
         <a href="#process">How It Works</a>
+        <a href="#about">About</a>
+        <a href="#faq">FAQ</a>
         <a href="#contact">Contact</a>
       </div>
-      <a href="#contact" class="btn-primary nav-cta">Get Started</a>
 
-      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="nav-actions">
+        <a href="#contact" class="btn btn-outline">Book a Call</a>
+        <a href="#contact" class="btn btn-primary">Let's Talk</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
 
     <div class="mobile-menu" id="mobile-menu">
-      <a href="#features" onclick="closeMobileMenu()">Approach</a>
-      <a href="#services" onclick="closeMobileMenu()">Services</a>
-      <a href="#process" onclick="closeMobileMenu()">How It Works</a>
-      <a href="#contact" onclick="closeMobileMenu()">Contact</a>
-      <a href="#contact" class="btn-primary" onclick="closeMobileMenu()">Get Started</a>
+      <a href="#services" onclick="closeMob()">Services</a>
+      <a href="#process" onclick="closeMob()">How It Works</a>
+      <a href="#about" onclick="closeMob()">About</a>
+      <a href="#faq" onclick="closeMob()">FAQ</a>
+      <a href="#contact" onclick="closeMob()">Contact</a>
+      <a href="#contact" class="btn btn-primary" onclick="closeMob()">Let's Talk</a>
     </div>
   </div>
 </nav>
 
 
-<!-- ============================================================
-     HERO
-     ============================================================ -->
+<!-- ================================================
+  HERO
+================================================ -->
 <section id="hero">
-  <div class="hero-grid-bg"></div>
-  <div class="hero-glow"></div>
-
-  <!-- Signature animation: rising chart bars -->
-  <div class="chart-canvas" id="chart-canvas" aria-hidden="true"></div>
-
   <div class="container">
-    <div class="hero-content">
-      <div class="hero-badge gsap-fade-up">
-        <span class="hero-badge-dot"></span>
-        Amazon Marketplace Partner
+    <div class="hero-grid">
+
+      <div class="hero-text">
+        <div class="hero-urgency">
+          <span class="hero-urgency-dot"></span>
+          Free Amazon account audit — limited slots
+        </div>
+
+        <h1>Your Dedicated <span>Amazon Growth</span> Partner</h1>
+
+        <p class="lead">
+          Listings not converting? PPC costs rising? Account issues holding you back?
+          I help ambitious brands and international sellers build and scale on Amazon — across USA, UK, Canada, Germany, France, Italy, Japan and beyond.
+        </p>
+
+        <div class="hero-ctas">
+          <a href="#contact" class="btn btn-primary btn-lg">Book a Free Strategy Call</a>
+          <a href="#services" class="btn btn-outline btn-lg">View Services</a>
+        </div>
+
+        <div class="hero-trust">
+          <div class="hero-trust-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            5+ Years Experience
+          </div>
+          <div class="hero-trust-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            10+ Marketplaces
+          </div>
+          <div class="hero-trust-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            No Fake Promises
+          </div>
+        </div>
       </div>
 
-      <h1 class="hero-title gsap-fade-up">
-        Marketplace Growth<br>for <em>Ambitious</em> Brands
-      </h1>
+      <!-- Dashboard card visual -->
+      <div class="hero-visual">
+        <div class="hero-card">
+          <div class="hero-card-header">
+            <div class="hero-card-dot" style="background:#14B8A6"></div>
+            <div class="hero-card-dot" style="background:#E2E8F0; margin-left:4px"></div>
+            <div class="hero-card-title" style="margin-left:.5rem">Account Overview</div>
+          </div>
 
-      <p class="hero-desc gsap-fade-up">
-        I help international sellers and ecommerce brands build, grow and dominate on Amazon — across the USA, UK, Canada, Germany, France, Italy, Japan and beyond. From PPC to full account management, every service is delivered with hands-on expertise and genuine accountability.
-      </p>
+          <div class="hero-metric">
+            <span class="hero-metric-label">Organic Rank (target keyword)</span>
+            <span class="hero-metric-value"><span class="up">↑</span> Improving</span>
+          </div>
+          <div class="hero-metric">
+            <span class="hero-metric-label">PPC ACoS</span>
+            <span class="hero-metric-value"><span class="up">↓</span> Optimised</span>
+          </div>
+          <div class="hero-metric">
+            <span class="hero-metric-label">Listing Quality Score</span>
+            <span class="hero-metric-value"><span class="up">↑</span> Strong</span>
+          </div>
+          <div class="hero-metric">
+            <span class="hero-metric-label">Account Health</span>
+            <span class="hero-metric-value" style="color:#14B8A6">Good Standing</span>
+          </div>
 
-      <div class="hero-actions gsap-fade-up">
-        <a href="#contact" class="btn-primary">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
-          Start Growing
-        </a>
-        <a href="#services" class="btn-secondary">View Services</a>
+          <div class="hero-sparkbar">
+            <span style="height:40%"></span>
+            <span style="height:55%"></span>
+            <span style="height:45%"></span>
+            <span style="height:65%"></span>
+            <span style="height:58%"></span>
+            <span style="height:72%"></span>
+            <span style="height:80%"></span>
+            <span style="height:88%"></span>
+            <span style="height:95%"></span>
+          </div>
+        </div>
       </div>
 
-      <div class="hero-trust gsap-fade-up">
-        <div class="hero-trust-item">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-          5+ Years Amazon Experience
-        </div>
-        <div class="hero-trust-item">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-          USA · UK · CA · DE · FR · IT · JP
-        </div>
-        <div class="hero-trust-item">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-          No Fake Promises — Real Results
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="hero-glow-bottom"></div>
-</section>
-
-
-<!-- ============================================================
-     FEATURES (3 cards)
-     ============================================================ -->
-<section id="features">
-  <div class="container">
-    <div class="features-header">
-      <div class="section-label">My Approach</div>
-      <h2 class="section-heading" style="margin-top:0.5rem">Built for Serious Amazon Growth</h2>
-      <p class="section-sub">Every account I manage gets strategy, attention and execution — not a cookie-cutter playbook.</p>
-    </div>
-
-    <div class="features-grid">
-      <div class="feature-card gsap-fade-up">
-        <div class="feature-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>
-          </svg>
-        </div>
-        <h3>Data-Driven PPC</h3>
-        <p>PPC campaigns built on real search data, thorough keyword research and ongoing bid optimisation — not guesswork. Every pound and dollar of ad spend is tracked and accountable.</p>
-      </div>
-
-      <div class="feature-card gsap-fade-up">
-        <div class="feature-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
-          </svg>
-        </div>
-        <h3>Listing Excellence</h3>
-        <p>SEO-optimised titles, bullets and descriptions that convert browsers into buyers. Every listing is crafted to rank for the right keywords and speak to the right customer.</p>
-      </div>
-
-      <div class="feature-card gsap-fade-up">
-        <div class="feature-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-          </svg>
-        </div>
-        <h3>Full Account Ownership</h3>
-        <p>I manage the complete picture — from account health and inventory to competitor monitoring and strategic decisions — so you can focus on your brand, not the dashboards.</p>
-      </div>
     </div>
   </div>
 </section>
 
 
-<!-- ============================================================
-     PILLARS (stats)
-     ============================================================ -->
-<section id="pillars">
+<!-- ================================================
+  PLATFORMS
+================================================ -->
+<div class="platforms-section">
   <div class="container">
-    <div class="pillars-grid">
-      <div class="pillar">
-        <div class="pillar-number" data-target="5" data-suffix="+">0</div>
-        <div class="pillar-label">Years Managing Amazon Accounts</div>
-      </div>
-      <div class="pillar">
-        <div class="pillar-number" data-target="7" data-suffix="">0</div>
-        <div class="pillar-label">Core Marketplace Services</div>
-      </div>
-      <div class="pillar">
-        <div class="pillar-number" data-target="10" data-suffix="+">0</div>
-        <div class="pillar-label">Amazon Marketplaces Covered</div>
-      </div>
+    <p class="platforms-label">Amazon Marketplaces I Work On</p>
+    <div class="platforms-logos">
+      <div class="platform-badge"><span class="flag">🇺🇸</span> Amazon USA</div>
+      <div class="platform-badge"><span class="flag">🇬🇧</span> Amazon UK</div>
+      <div class="platform-badge"><span class="flag">🇨🇦</span> Amazon Canada</div>
+      <div class="platform-badge"><span class="flag">🇩🇪</span> Amazon Germany</div>
+      <div class="platform-badge"><span class="flag">🇫🇷</span> Amazon France</div>
+      <div class="platform-badge"><span class="flag">🇮🇹</span> Amazon Italy</div>
+      <div class="platform-badge"><span class="flag">🇯🇵</span> Amazon Japan</div>
+      <div class="platform-badge"><span class="flag">🇪🇸</span> Amazon Spain</div>
+      <div class="platform-badge"><span class="flag">🇦🇪</span> Amazon UAE</div>
     </div>
   </div>
-</section>
+</div>
 
 
-<!-- ============================================================
-     PROCESS
-     ============================================================ -->
-<section id="process">
+<!-- ================================================
+  SERVICES
+================================================ -->
+<section id="services" class="section section-alt">
   <div class="container">
-    <div class="process-header section-header-group">
-      <div class="section-label">How It Works</div>
-      <h2 class="section-heading" style="margin-top:0.5rem">A Clear Path to Marketplace Growth</h2>
-      <p class="section-sub">No complex onboarding. A focused, three-stage process that gets your Amazon presence moving fast.</p>
+    <div class="section-header text-center">
+      <div class="label">Services</div>
+      <h2>Everything Your Amazon Business Needs</h2>
+      <p>Seven focused services — each delivered with hands-on expertise and genuine accountability. No templates, no guesswork.</p>
     </div>
 
-    <div class="process-steps">
-      <div class="process-step gsap-fade-up">
-        <div class="step-number">01</div>
-        <h3>Discovery &amp; Audit</h3>
-        <p>I review your existing account, listings, ad history and competitors. This gives us a clear picture of where you stand and where the biggest growth opportunities are.</p>
-      </div>
-      <div class="process-step gsap-fade-up">
-        <div class="step-number">02</div>
-        <h3>Strategy &amp; Execution</h3>
-        <p>A tailored growth plan is put into action — covering listing improvements, PPC campaigns, keyword targeting and inventory strategy. No generic templates.</p>
-      </div>
-      <div class="process-step gsap-fade-up">
-        <div class="step-number">03</div>
-        <h3>Monitor &amp; Optimise</h3>
-        <p>Continuous performance tracking, regular reporting and ongoing optimisation ensure your account keeps improving over time. Results are transparent and measurable.</p>
-      </div>
-    </div>
-  </div>
-</section>
+    <div class="services-grid mt-3">
 
-
-<!-- ============================================================
-     SERVICES GRID
-     ============================================================ -->
-<section id="services">
-  <div class="container">
-    <div class="services-header section-header-group">
-      <div class="section-label">Services</div>
-      <h2 class="section-heading" style="margin-top:0.5rem">Everything Your Amazon Business Needs</h2>
-      <p class="section-sub">Seven focused services — each one delivered with the depth and attention it deserves.</p>
-    </div>
-
-    <div class="services-grid">
-      <!-- 1 -->
-      <div class="service-tile gsap-fade-up">
-        <div class="service-tile-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
-          </svg>
+      <div class="service-card reveal">
+        <div class="service-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
         </div>
         <h3>Amazon Account Management</h3>
-        <p>End-to-end account management — health monitoring, policy compliance, performance metrics and strategic oversight on a continuous basis.</p>
+        <p>End-to-end account oversight — health monitoring, policy compliance, performance metrics and strategic decisions handled on your behalf.</p>
+        <a href="#contact" class="arrow-link">
+          Get started
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
       </div>
 
-      <!-- 2 -->
-      <div class="service-tile gsap-fade-up">
-        <div class="service-tile-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/>
-          </svg>
+      <div class="service-card reveal">
+        <div class="service-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>
         </div>
         <h3>PPC Campaign Setup &amp; Optimisation</h3>
-        <p>Sponsored Products, Sponsored Brands and Sponsored Display campaigns — built from scratch or restructured for maximum return on ad spend.</p>
+        <p>Sponsored Products, Brands and Display campaigns built from scratch or restructured — with ongoing bid management and search term analysis to maximise ROAS.</p>
+        <a href="#contact" class="arrow-link">
+          Get started
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
       </div>
 
-      <!-- 3 -->
-      <div class="service-tile gsap-fade-up">
-        <div class="service-tile-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/>
-          </svg>
+      <div class="service-card reveal">
+        <div class="service-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
         </div>
         <h3>Listing Creation &amp; Optimisation</h3>
-        <p>Compelling, keyword-rich titles, bullet points and descriptions that rank organically and drive conversions across every marketplace.</p>
+        <p>SEO-rich titles, bullet points and descriptions crafted to rank organically and convert browsers to buyers across every target marketplace.</p>
+        <a href="#contact" class="arrow-link">
+          Get started
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
       </div>
 
-      <!-- 4 -->
-      <div class="service-tile gsap-fade-up">
-        <div class="service-tile-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-          </svg>
+      <div class="service-card reveal">
+        <div class="service-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
         </div>
         <h3>Keyword Research</h3>
-        <p>Deep search-term analysis using marketplace data to identify high-volume, high-intent keywords that drive real organic and paid visibility.</p>
+        <p>Deep search-term analysis using real marketplace data to identify high-volume, high-intent keywords that drive both organic ranking and paid visibility.</p>
+        <a href="#contact" class="arrow-link">
+          Get started
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
       </div>
 
-      <!-- 5 -->
-      <div class="service-tile gsap-fade-up">
-        <div class="service-tile-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-          </svg>
+      <div class="service-card reveal">
+        <div class="service-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
         </div>
         <h3>Competitor Analysis</h3>
-        <p>Systematic review of competing listings, pricing strategies, ad activity and review positioning — so you always know where the opportunities are.</p>
+        <p>Systematic review of competing listings, pricing strategies, ad activity and review profiles — so you always know where the gaps and opportunities are.</p>
+        <a href="#contact" class="arrow-link">
+          Get started
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
       </div>
 
-      <!-- 6 -->
-      <div class="service-tile gsap-fade-up">
-        <div class="service-tile-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6"/><path d="M8 11h6"/>
-          </svg>
-        </div>
-        <h3>Product Research</h3>
-        <p>Identifying profitable product opportunities based on real marketplace demand, competition levels, margins and sourcing feasibility.</p>
-      </div>
-
-      <!-- 7 — spans full row on 3-col layout if you want, or just sits as a tile -->
-      <div class="service-tile gsap-fade-up">
-        <div class="service-tile-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
-            <polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/>
-          </svg>
+      <div class="service-card reveal">
+        <div class="service-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
         </div>
         <h3>Inventory Creation &amp; Management</h3>
-        <p>Setting up and managing FBA shipments, inventory levels and reorder planning to prevent stockouts and maintain strong IPI scores.</p>
+        <p>FBA shipment setup, inventory level planning and reorder scheduling to prevent stockouts, maintain IPI scores and keep your listings active.</p>
+        <a href="#contact" class="arrow-link">
+          Get started
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+        </div>
+        <h3>Product Research</h3>
+        <p>Identifying profitable product opportunities based on real marketplace demand, competition levels, estimated margins and practical sourcing considerations.</p>
+        <a href="#contact" class="arrow-link">
+          Get started
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================
+  ABOUT
+================================================ -->
+<section id="about" class="section">
+  <div class="container">
+    <div class="about-grid">
+
+      <div class="about-text">
+        <div class="label">About SellerBeacon</div>
+        <h2>A Personal, Experienced Amazon Partner</h2>
+        <p>SellerBeacon is a solo Amazon consultancy — not an agency with a revolving door of account managers. When you work with me, you work directly with me.</p>
+        <p>Over the past five years I've managed Amazon accounts across more than ten international marketplaces, working with sellers in a wide range of categories. I understand what actually moves the needle — and I'm honest when something won't.</p>
+        <p>My approach is straightforward: understand your products and goals, apply the right strategies, and communicate clearly throughout. No jargon, no vanity metrics, no inflated promises.</p>
+
+        <div class="about-values">
+          <div class="about-value">
+            <div class="about-value-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div>
+              <h4>Transparent &amp; Honest</h4>
+              <p>You'll always know exactly what I'm doing, why, and what the realistic outcomes look like.</p>
+            </div>
+          </div>
+          <div class="about-value">
+            <div class="about-value-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </div>
+            <div>
+              <h4>International Expertise</h4>
+              <p>Experienced across USA, UK, Canada, Germany, France, Italy, Japan, Spain, UAE and more.</p>
+            </div>
+          </div>
+          <div class="about-value">
+            <div class="about-value-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <div>
+              <h4>Results-Focused</h4>
+              <p>Every action is connected to a measurable outcome — rankings, conversions, ACoS, account health.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-visual">
+        <div class="about-stat">
+          <div class="about-stat-num" data-target="5" data-suffix="+">0</div>
+          <div class="about-stat-label">Years managing Amazon accounts</div>
+        </div>
+        <div class="about-divider"></div>
+        <div class="about-stat">
+          <div class="about-stat-num" data-target="10" data-suffix="+">0</div>
+          <div class="about-stat-label">Marketplaces covered globally</div>
+        </div>
+        <div class="about-divider"></div>
+        <div class="about-stat">
+          <div class="about-stat-num" data-target="7" data-suffix="">0</div>
+          <div class="about-stat-label">Core services delivered</div>
+        </div>
+        <div class="about-divider"></div>
+        <p style="font-size:.85rem;color:rgba(255,255,255,.4);line-height:1.65;margin-top:.5rem">
+          "I built SellerBeacon because international sellers deserve a dedicated partner who actually understands Amazon — not a generic agency handing them off to a junior."
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================
+  OUTCOMES
+================================================ -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header text-center">
+      <div class="label">What To Expect</div>
+      <h2>What Working Together Looks Like</h2>
+      <p>I don't publish unverifiable statistics. Here's what clients typically experience when we work together consistently.</p>
+    </div>
+
+    <div class="outcomes-grid mt-3">
+      <div class="outcome-card reveal">
+        <div class="outcome-arrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+        </div>
+        <h3>More Efficient Ad Spend</h3>
+        <p>Campaigns restructured around real search intent, with regular negative keyword pruning and bid optimisation — leading to a lower ACoS and better return on every pound or dollar spent on ads.</p>
+      </div>
+
+      <div class="outcome-card reveal">
+        <div class="outcome-arrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+        </div>
+        <h3>Stronger Listing Performance</h3>
+        <p>Properly optimised listings rank for the right keywords and speak directly to customer intent. Most listings see improved click-through and conversion rates within the first 30–60 days.</p>
+      </div>
+
+      <div class="outcome-card reveal">
+        <div class="outcome-arrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+        </div>
+        <h3>A Healthier, Stable Account</h3>
+        <p>Proactive account health monitoring, policy compliance checks and inventory management mean fewer surprises — and more time for you to focus on growing your brand.</p>
       </div>
     </div>
   </div>
 </section>
 
 
-<!-- ============================================================
-     TRUST SIGNALS
-     ============================================================ -->
-<section id="trust">
+<!-- ================================================
+  PROCESS
+================================================ -->
+<section id="process" class="section">
   <div class="container">
-    <div class="section-header-group">
-      <div class="section-label">Why Work With Me</div>
-      <h2 class="section-heading" style="margin-top:0.5rem">Expertise You Can Rely On</h2>
-      <p class="section-sub">Five years of real Amazon marketplace experience across global regions — not theory, not templates.</p>
+    <div class="section-header text-center">
+      <div class="label">How It Works</div>
+      <h2>Getting Started Is Simple</h2>
+      <p>A clear three-stage process — no complicated onboarding, no long contracts before we've even spoken.</p>
     </div>
 
-    <div class="trust-grid">
-      <div class="trust-card gsap-fade-up">
-        <div class="trust-card-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
-          </svg>
+    <div class="process-grid mt-3">
+      <div class="process-step reveal">
+        <div class="process-num">01</div>
+        <h3>Free Discovery Call</h3>
+        <p>We start with a conversation — you tell me about your products, goals and current challenges. I'll do a quick review of your account and give you honest initial feedback. No charge, no obligation.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="process-num">02</div>
+        <h3>Audit &amp; Strategy</h3>
+        <p>I carry out a thorough audit of your account, listings, PPC history and competitor landscape. You receive a clear plan covering what needs fixing, what needs building and in what order.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="process-num">03</div>
+        <h3>Execution &amp; Ongoing Optimisation</h3>
+        <p>Work begins. I implement the strategy, report regularly on progress and keep refining based on real data. You stay informed at every step without being overwhelmed with detail.</p>
+      </div>
+    </div>
+
+    <div class="text-center mt-3">
+      <a href="#contact" class="btn btn-primary btn-lg">Book Your Free Discovery Call</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================
+  FAQ
+================================================ -->
+<section id="faq" class="section section-alt">
+  <div class="container">
+    <div class="section-header text-center">
+      <div class="label">FAQ</div>
+      <h2>Questions Sellers Usually Ask</h2>
+      <p>If your question isn't here, just send a message — I'm happy to answer directly.</p>
+    </div>
+
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <div class="faq-q">
+          What services do you offer?
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
         </div>
-        <h3>5+ Years Amazon Experience</h3>
-        <p>I've spent over five years managing Amazon accounts across multiple categories and marketplaces — building real expertise through hands-on work, not classroom study.</p>
+        <div class="faq-a"><p>I offer Amazon account management, PPC campaign setup and optimisation, listing creation and optimisation, keyword research, competitor analysis, product research, and inventory creation and management. Most clients combine several services depending on their needs and stage of growth.</p></div>
       </div>
 
-      <div class="trust-card gsap-fade-up">
-        <div class="trust-card-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-          </svg>
+      <div class="faq-item">
+        <div class="faq-q">
+          I'm based outside the UK — can you still help me?
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
         </div>
-        <h3>Global Marketplace Coverage</h3>
-        <p>I've worked across Amazon USA, UK, Canada, Germany, France, Italy, Japan and more — understanding the nuances of each marketplace and what drives success in each region.</p>
+        <div class="faq-a"><p>Absolutely. The majority of my clients are international sellers — brands based in the Middle East, South Asia, Europe and North America selling on multiple Amazon marketplaces. I work across time zones and communicate via email and WhatsApp.</p></div>
       </div>
 
-      <div class="trust-card gsap-fade-up">
-        <div class="trust-card-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-          </svg>
+      <div class="faq-item">
+        <div class="faq-q">
+          Is SellerBeacon an agency or an individual consultant?
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
         </div>
-        <h3>Transparent &amp; Accountable</h3>
-        <p>No inflated promises or vanity metrics. You get clear, honest communication about what's working, what isn't, and exactly what I'm doing to move the needle on your account.</p>
+        <div class="faq-a"><p>SellerBeacon is a solo consultancy. You work directly with me — not a junior account manager or a rotating team. This means consistent communication, genuine accountability and no "lost in translation" between who promises results and who actually does the work.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          How quickly can I expect to see results?
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        </div>
+        <div class="faq-a"><p>It depends on the service. PPC restructures typically show measurable improvement within 3–6 weeks. Listing optimisations can impact conversion rates within 30–60 days. Organic ranking improvements take longer — usually 60–90 days or more depending on competition. I'll give you realistic timelines for your specific situation from the outset.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          Do you work with new Amazon sellers or only established brands?
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        </div>
+        <div class="faq-a"><p>Both. For new sellers, I can help with account setup, initial listing creation, keyword research and launch PPC strategy. For established brands, I focus on optimisation, scaling ad spend efficiently and fixing issues that are limiting growth. The discovery call helps us understand which approach fits your situation.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          What marketplaces do you cover?
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        </div>
+        <div class="faq-a"><p>I have direct experience managing accounts on Amazon USA, UK, Canada, Germany, France, Italy, Japan, Spain and UAE. If you're targeting a marketplace not listed, get in touch and we can discuss whether it's something I can support.</p></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================
+  CTA BANNER
+================================================ -->
+<section class="section">
+  <div class="container">
+    <div class="cta-banner">
+      <div class="cta-banner-text">
+        <h2>Ready to Grow on Amazon?</h2>
+        <p>Book a free 30-minute strategy call. We'll look at your account together, identify the biggest opportunities and I'll tell you honestly how I can help.</p>
+      </div>
+      <div class="cta-banner-actions">
+        <a href="#contact" class="btn btn-primary btn-lg">Book a Free Call</a>
+        <a href="mailto:abdulsaboor697@gmail.com" class="btn btn-outline btn-lg" style="color:#fff;border-color:rgba(255,255,255,.25)">Send an Email</a>
       </div>
     </div>
   </div>
 </section>
 
 
-<!-- ============================================================
-     CONTACT FORM
-     ============================================================ -->
-<section id="contact">
+<!-- ================================================
+  CONTACT
+================================================ -->
+<section id="contact" class="section section-alt">
   <div class="container">
-    <div class="contact-wrap">
-      <!-- Left: info -->
-      <div class="contact-info">
-        <div class="section-label" style="color:var(--teal);margin-bottom:0.75rem">Get in Touch</div>
-        <h2>Let's Talk About Your Amazon Growth</h2>
-        <p>Whether you're launching on Amazon for the first time or looking to scale an existing account, I'd love to hear about your goals. Send a message and I'll get back to you promptly.</p>
+    <div class="section-header text-center" style="margin-bottom:3rem">
+      <div class="label">Get in Touch</div>
+      <h2>Let's Talk About Your Amazon Goals</h2>
+      <p>Fill in the form below and I'll get back to you promptly — usually within 24 hours.</p>
+    </div>
 
-        <div class="contact-detail">
-          <div class="contact-detail-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
-            </svg>
+    <div class="contact-grid">
+      <div class="contact-sidebar">
+        <h3>Contact Details</h3>
+        <p>Prefer to reach out directly? Use any of the options below. I'm available via email and WhatsApp.</p>
+
+        <div class="contact-method">
+          <div class="contact-method-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           </div>
-          <div class="contact-detail-text">
-            <a href="mailto:abdulsaboor697@gmail.com">abdulsaboor697@gmail.com</a>
+          <div>
+            <div class="contact-method-label">Email</div>
+            <div class="contact-method-value"><a href="mailto:abdulsaboor697@gmail.com">abdulsaboor697@gmail.com</a></div>
           </div>
         </div>
 
-        <div class="contact-detail">
-          <div class="contact-detail-icon">
-            <!-- WhatsApp icon -->
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
-            </svg>
+        <div class="contact-method">
+          <div class="contact-method-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
           </div>
-          <div class="contact-detail-text">
-            <a href="https://wa.me/923435787663" target="_blank" rel="noopener">+92 343 5787663 (WhatsApp)</a>
+          <div>
+            <div class="contact-method-label">WhatsApp</div>
+            <div class="contact-method-value"><a href="https://wa.me/923435787663" target="_blank" rel="noopener">+92 343 5787663</a></div>
           </div>
         </div>
 
-        <div class="contact-detail">
-          <div class="contact-detail-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-            </svg>
+        <div class="contact-method">
+          <div class="contact-method-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
           </div>
-          <div class="contact-detail-text">Serving clients globally — USA, UK, EU, Middle East &amp; beyond</div>
+          <div>
+            <div class="contact-method-label">Serving</div>
+            <div class="contact-method-value">International clients worldwide</div>
+          </div>
+        </div>
+
+        <div class="contact-method">
+          <div class="contact-method-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <div class="contact-method-label">Response Time</div>
+            <div class="contact-method-value">Usually within 24 hours</div>
+          </div>
         </div>
       </div>
 
-      <!-- Right: form -->
-      <div class="contact-form-wrap">
+      <div class="contact-form-card">
         <form id="contact-form" novalidate>
           <div class="form-row">
             <div class="form-group">
-              <label for="cf-name">Your Name</label>
-              <input type="text" id="cf-name" name="name" placeholder="John Smith" required>
+              <label for="f-name">Your Name *</label>
+              <input type="text" id="f-name" name="name" placeholder="John Smith" required>
             </div>
             <div class="form-group">
-              <label for="cf-email">Email Address</label>
-              <input type="email" id="cf-email" name="email" placeholder="john@brand.com" required>
+              <label for="f-email">Email Address *</label>
+              <input type="email" id="f-email" name="email" placeholder="john@brand.com" required>
             </div>
           </div>
           <div class="form-row">
             <div class="form-group">
-              <label for="cf-business">Brand / Business Name</label>
-              <input type="text" id="cf-business" name="business" placeholder="Your brand name">
+              <label for="f-brand">Brand / Business Name</label>
+              <input type="text" id="f-brand" name="brand" placeholder="Your brand name">
             </div>
             <div class="form-group">
-              <label for="cf-marketplace">Primary Marketplace</label>
-              <select id="cf-marketplace" name="marketplace">
+              <label for="f-marketplace">Primary Marketplace</label>
+              <select id="f-marketplace" name="marketplace">
                 <option value="">Select marketplace</option>
                 <option>Amazon USA</option>
                 <option>Amazon UK</option>
@@ -431,14 +588,16 @@
                 <option>Amazon France</option>
                 <option>Amazon Italy</option>
                 <option>Amazon Japan</option>
+                <option>Amazon Spain</option>
+                <option>Amazon UAE</option>
                 <option>Multiple Marketplaces</option>
                 <option>Not yet on Amazon</option>
               </select>
             </div>
           </div>
           <div class="form-group">
-            <label for="cf-service">Service You're Interested In</label>
-            <select id="cf-service" name="service">
+            <label for="f-service">Service You're Interested In</label>
+            <select id="f-service" name="service">
               <option value="">Select a service</option>
               <option>Amazon Account Management</option>
               <option>PPC Campaign Setup &amp; Optimisation</option>
@@ -447,21 +606,20 @@
               <option>Competitor Analysis</option>
               <option>Product Research</option>
               <option>Inventory Management</option>
-              <option>Full Package (Multiple Services)</option>
+              <option>Multiple Services</option>
+              <option>Not sure yet — need advice</option>
             </select>
           </div>
           <div class="form-group">
-            <label for="cf-message">Tell Me About Your Goals</label>
-            <textarea id="cf-message" name="message" placeholder="What are you trying to achieve on Amazon? Any context about your products or current situation is helpful..." required></textarea>
+            <label for="f-msg">Tell Me About Your Goals *</label>
+            <textarea id="f-msg" name="message" placeholder="What are you trying to achieve? Any context about your products, current challenges or marketplace is helpful..." required></textarea>
           </div>
-
-          <div class="form-submit-wrap">
-            <button type="submit" class="btn-primary" id="form-btn">
+          <div class="form-btn-wrap">
+            <button type="submit" class="btn btn-primary btn-lg" id="f-btn">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
-              <span id="form-btn-text">Send Message</span>
+              <span id="f-btn-text">Send Message</span>
             </button>
           </div>
-
           <div class="form-status" id="form-status"></div>
         </form>
       </div>
@@ -470,22 +628,25 @@
 </section>
 
 
-<!-- ============================================================
-     FOOTER
-     ============================================================ -->
+<!-- ================================================
+  FOOTER
+================================================ -->
 <footer id="footer">
   <div class="container">
-    <div class="footer-grid">
+    <div class="footer-top">
+
       <div class="footer-brand">
-        <div class="nav-logo" style="margin-bottom:1rem">
-          <div class="nav-logo-icon">
+        <div class="nav-logo">
+          <div class="nav-logo-mark">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M5.636 5.636a9 9 0 1 0 12.728 0"/><path d="M8.464 8.464a5 5 0 1 0 7.072 0"/><circle cx="12" cy="12" r="1" fill="currentColor"/>
+              <path d="M5.636 5.636a9 9 0 1 0 12.728 0"/><path d="M8.464 8.464a5 5 0 1 0 7.072 0"/>
+              <circle cx="12" cy="12" r="1" fill="currentColor"/>
             </svg>
           </div>
-          <span class="nav-logo-text">SellerBeacon</span>
+          <span class="nav-logo-name">SellerBeacon</span>
         </div>
-        <p>Marketplace growth for ambitious brands. Expert Amazon management across global marketplaces — PPC, listings, strategy and more.</p>
+        <p>Marketplace growth for ambitious brands. Expert Amazon management — PPC, listings, account management and strategy across global marketplaces.</p>
+        <a href="#contact" class="btn btn-primary">Book a Free Call</a>
       </div>
 
       <div class="footer-col">
@@ -495,6 +656,7 @@
           <li><a href="#services">PPC Campaigns</a></li>
           <li><a href="#services">Listing Optimisation</a></li>
           <li><a href="#services">Keyword Research</a></li>
+          <li><a href="#services">Competitor Analysis</a></li>
           <li><a href="#services">Product Research</a></li>
           <li><a href="#services">Inventory Management</a></li>
         </ul>
@@ -505,21 +667,33 @@
         <ul>
           <li><a href="mailto:abdulsaboor697@gmail.com">abdulsaboor697@gmail.com</a></li>
           <li><a href="https://wa.me/923435787663" target="_blank" rel="noopener">WhatsApp: +92 343 5787663</a></li>
-          <li><a href="#features">About</a></li>
+          <li><a href="#about">About SellerBeacon</a></li>
           <li><a href="#process">How It Works</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+
+        <h4 style="margin-top:1.75rem">Marketplaces</h4>
+        <ul>
+          <li><a href="#contact">Amazon USA &amp; Canada</a></li>
+          <li><a href="#contact">Amazon UK</a></li>
+          <li><a href="#contact">Amazon Europe</a></li>
+          <li><a href="#contact">Amazon Japan</a></li>
+          <li><a href="#contact">Amazon UAE</a></li>
         </ul>
       </div>
+
     </div>
 
     <div class="footer-bottom">
-      <div class="footer-copyright">&copy; 2025 SellerBeacon. All rights reserved.</div>
+      <div class="footer-copy">&copy; 2025 SellerBeacon. All rights reserved.</div>
       <div class="footer-status">
         <span class="status-dot"></span>
-        <span class="footer-status-text">Available for new projects</span>
+        <span>Available for new projects</span>
       </div>
     </div>
   </div>
 </footer>
+
 
 <script src="script.js"></script>
 </body>
